@@ -5,21 +5,21 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Namespaces;
 import org.apache.struts2.convention.annotation.Result;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 /**
- * Notice the @Action annotation where action and result pages are declared
- * Also notice that we don't need to implement Action interface or extend ActionSupport
- * class, only we need is an execute() method with same signature
- * @author pankaj
+ * 
+ * @author JavaLive.
  *
  */
 @Action(value = "login", results = {
 		@Result(name = "SUCCESS", location = "/welcome.jsp"),
 		@Result(name = "ERROR", location = "/error.jsp") })
 @Namespaces(value={@Namespace("/User"),@Namespace("/")})
-public class LoginAction {
+public class LoginAction extends ActionSupport{
 
 	public String execute() throws Exception {
-		if("JavaLive".equals(getName()) && "admin".equals(getPwd()))
+		if("admin".equals(getName()) && "admin".equals(getPwd()))
 		return "SUCCESS";
 		else return "ERROR";
 	}

@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
  *	</action>
  * HomeAction class will be automatically mapped for home.action
  * Default page is login.jsp which will be served to client
- * @author pankaj
+ * @author JavaLive.com
  *
  */
 
